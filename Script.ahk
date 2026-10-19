@@ -1,10 +1,11 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-;在下方输入";"可去掉按键弹窗
-MsgBox "按键可自定义`n小键盘1：火箭跳`n小键盘2：冰猎超级跳`n小键盘3：术士超级跳。","当前按键"
+;在下方行最前输入";"可去掉按键弹窗
+MsgBox "按键可自定义`n小键盘1：火箭跳`n小键盘2：冰猎右键超级跳`n小键盘5：冰猎左键超级跳`n小键盘3：术士超级跳。","默认按键"
 
-;火箭跳q
+;火箭跳
+;下方"Numpad1"是触发按键，修改成自己需要的，其他同理
 Numpad1:: {
     ToolTip "火箭跳开始"
     SetTimer ToolTip , 1000
@@ -19,9 +20,22 @@ Numpad1:: {
     Send "{RButton up}"
 }
 
-;冰猎超级跳
+;冰猎左键超级跳
+Numpad5::{
+    ToolTip "冰猎左键超级跳开始"
+    SetTimer ToolTip , 1000
+    Send "{3}"
+    Sleep 400
+    Click "{LeftButton}"
+    Sleep 70
+    Send "{Space}"
+    Sleep 10
+    Send "{X}"
+}
+
+;冰猎右键超级跳
 Numpad2::{
-    ToolTip "冰猎超级跳开始"
+    ToolTip "冰猎右键超级跳开始"
     SetTimer ToolTip , 1000
     Send "{3}"
     Sleep 400
