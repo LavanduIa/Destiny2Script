@@ -1,9 +1,13 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-;火箭跳
+;在下方输入";"可去掉按键弹窗
+MsgBox "按键可自定义`n小键盘1：火箭跳`n小键盘2：冰猎超级跳`n小键盘3：术士超级跳。","当前按键"
+
+;火箭跳q
 Numpad1:: {
-    ; sleep后的数字是毫秒
+    ToolTip "火箭跳开始"
+    SetTimer ToolTip , 1000
     Sleep 500
     Send "{RButton down}"
     Sleep 500
@@ -17,6 +21,8 @@ Numpad1:: {
 
 ;冰猎超级跳
 Numpad2::{
+    ToolTip "冰猎超级跳开始"
+    SetTimer ToolTip , 1000
     Send "{3}"
     Sleep 400
     Click "{RightButton}"
@@ -28,6 +34,8 @@ Numpad2::{
 
 ;术士超级跳
 Numpad3::{
+    ToolTip "术士超级跳开始"
+    SetTimer ToolTip , 1000
     Send "{3}"
     Sleep 450
     Click "{RightButton}"
